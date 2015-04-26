@@ -12,12 +12,33 @@ namespace BookStore.Data.Services
     {
         public bool CreateUser(User user)
         {
-            using (var context = new BookStoreContext())
+            try
             {
-                context.Users.Attach(user);
-                context.Entry(user).State = EntityState.Added;
-                return context.SaveChanges() > 0;
+                using (var context = new BookStoreContext())
+                {
+                    context.Users.Attach(user);
+                    context.Entry(user).State = EntityState.Added;
+                    return context.SaveChanges() > 0;
+                }
             }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting  
+                        // the current instance as InnerException  
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+            
         }
 
         public bool UpdateUser(User user)
