@@ -3,9 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Data", "Data\BookStore.Data.csproj", "{BD6FF471-24C0-4708-8A78-C31F70976673}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.WebAPI", "BookStore.WebAPI\BookStore.WebAPI.csproj", "{39BD2E06-361C-4C02-B61C-74D15AFF7AB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Data", "BookStore.Data\BookStore.Data.csproj", "{BD6FF471-24C0-4708-8A78-C31F70976673}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BookStore.Site", "http://localhost:10131", "{AB07BE7E-6D37-471F-9D63-174ECFD25450}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_10131"
+		Debug.AspNetCompiler.PhysicalPath = "BookStore.Site\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_10131\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_10131"
+		Release.AspNetCompiler.PhysicalPath = "BookStore.Site\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_10131\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "BookStore.Site\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +34,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BD6FF471-24C0-4708-8A78-C31F70976673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD6FF471-24C0-4708-8A78-C31F70976673}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD6FF471-24C0-4708-8A78-C31F70976673}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD6FF471-24C0-4708-8A78-C31F70976673}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39BD2E06-361C-4C02-B61C-74D15AFF7AB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39BD2E06-361C-4C02-B61C-74D15AFF7AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39BD2E06-361C-4C02-B61C-74D15AFF7AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39BD2E06-361C-4C02-B61C-74D15AFF7AB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD6FF471-24C0-4708-8A78-C31F70976673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6FF471-24C0-4708-8A78-C31F70976673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6FF471-24C0-4708-8A78-C31F70976673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6FF471-24C0-4708-8A78-C31F70976673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB07BE7E-6D37-471F-9D63-174ECFD25450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB07BE7E-6D37-471F-9D63-174ECFD25450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB07BE7E-6D37-471F-9D63-174ECFD25450}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB07BE7E-6D37-471F-9D63-174ECFD25450}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

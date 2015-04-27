@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
-using BookStore.Data.Entities;
-using BookStore.Data.Services;
-using BookStore.Data.Services.Interface;
-using System.Web.Helpers;
-using System.Web.Mvc;
 using BookStore.WebAPI.Commons;
 using BookStore.WebAPI.Resources;
 using System.Net.Http;
 using System.Net;
+using BookStore.Data.Services.Interface;
+using BookStore.Data.Entities;
+using BookStore.Data.Services;
 
 namespace BookStore.WebAPI.Controllers
 {
