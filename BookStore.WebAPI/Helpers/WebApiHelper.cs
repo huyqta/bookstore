@@ -4,14 +4,14 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace BookStore.WebAPI
+namespace BookStore.WebAPI.Helpers
 {
     public class WebApiHelper
     {
-        public Exception GetExceptionMessage()
-        {
+        //public Exception GetExceptionMessage()
+        //{
             
-        }
+        //}
 
        
     }

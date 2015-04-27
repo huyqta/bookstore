@@ -15,7 +15,7 @@ namespace BookStore.Data.Entities
         [StringLength(50)]
         public string Password { get; set; }
 
-        [StringLength(10)]
+        [StringLength(250)]
         public string Fullname { get; set; }
 
         [StringLength(200)]

@@ -13,12 +13,5 @@ namespace BookStore.Data.Context
 
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>()
-                .Property(e => e.Fullname)
-                .IsFixedLength();
-        }
     }
 }

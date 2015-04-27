@@ -4,7 +4,7 @@ using BookStore.Data.Entities;
 
 namespace BookStore.Data.Services.Interface
 {
-    interface IBookService
+    public interface IBookService
     {
         bool CreateBook(Book book);
         bool UpdateBook(Book book);

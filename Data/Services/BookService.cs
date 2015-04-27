@@ -8,7 +8,7 @@ using BookStore.Data.Services.Interface;
 
 namespace BookStore.Data.Services
 {
-    class BookService : IBookService
+    public class BookService : IBookService
     {
         public bool CreateBook(Book book)
         {
