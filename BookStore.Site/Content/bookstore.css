@@ -1,0 +1,28 @@
+﻿body {
+  font: 12px/1.35 Arial, Helvetica, sans-serif; }
+
+header {
+  height: 200px; }
+
+#top-header {
+  background-color: #000000;
+  text-align: center;
+  color: #303F42; }
+
+#top-header h5 {
+  font-weight: bold;
+  font-size: 12px; }
+
+#main-header {
+  margin: 20px 0;
+  text-align: center;
+  font-family: 'Oswald', sans-serif; }
+
+#logo-books {
+  font-size: 48px;
+  font-weight: bold; }
+
+#logo-sas {
+  letter-spacing: 3px; }
+
+/*# sourceMappingURL=bookstore.css.map */
