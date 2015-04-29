@@ -41,5 +41,7 @@ namespace BookStore.Data.Entities
 
         [StringLength(250)]
         public string ImageUrl { get; set; }
+
+        public DateTime? CREDate { get; set; }
     }
 }

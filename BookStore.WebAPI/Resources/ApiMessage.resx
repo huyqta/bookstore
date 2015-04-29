@@ -120,6 +120,9 @@
   <data name="ApiResponseException" xml:space="preserve">
     <value>This api had error. </value>
   </data>
+  <data name="BookNotFound" xml:space="preserve">
+    <value>Book not found.</value>
+  </data>
   <data name="LoginFailed" xml:space="preserve">
     <value>Your username or password was wrong.</value>
   </data>

@@ -21,6 +21,7 @@ namespace BookStore.WebAPI.Controllers
             {
                 _bookService = new BookService();
                 book.Id = Guid.NewGuid();
+                book.CREDate = DateTime.Now;
                 if (_bookService.CreateBook(book))
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, book);
@@ -37,40 +38,19 @@ namespace BookStore.WebAPI.Controllers
             }
         }
 
-        public HttpResponseMessage UpdateBook([FromBody]Book book)
+        public HttpResponseMessage GetBookById(string id)
         {
             try
             {
                 _bookService = new BookService();
-                if (_bookService.UpdateBook(book))
+                var book = _bookService.GetBookById(Guid.Parse(id));
+                if (book != null)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, book);
                 }
                 else
                 {
-                    HttpError err = new HttpError(ApiMessage.RegisterFailed);
-                    return Request.CreateResponse(HttpStatusCode.InternalServerError, err);
-                }
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
-            }
-
-        }
-
-        public HttpResponseMessage RemoveBook([FromBody]Book book)
-        {
-            try
-            {
-                _bookService = new BookService();
-                if (_bookService.DeleteBook(book))
-                {
-                    return Request.CreateResponse(HttpStatusCode.OK, book);
-                }
-                else
-                {
-                    HttpError err = new HttpError(ApiMessage.RegisterFailed);
+                    HttpError err = new HttpError(ApiMessage.BookNotFound);
                     return Request.CreateResponse(HttpStatusCode.InternalServerError, err);
                 }
             }
@@ -79,5 +59,70 @@ namespace BookStore.WebAPI.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
             }
         }
+
+        public HttpResponseMessage Get()
+        {
+            try
+            {
+                _bookService = new BookService();
+                var books = _bookService.GetAllBook();
+                if (books != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
+                else
+                {
+                    HttpError err = new HttpError(ApiMessage.BookNotFound);
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, err);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
+            }
+        }
+
+        //public HttpResponseMessage UpdateBook([FromBody]Book book)
+        //{
+        //    try
+        //    {
+        //        _bookService = new BookService();
+        //        if (_bookService.UpdateBook(book))
+        //        {
+        //            return Request.CreateResponse(HttpStatusCode.OK, book);
+        //        }
+        //        else
+        //        {
+        //            HttpError err = new HttpError(ApiMessage.RegisterFailed);
+        //            return Request.CreateResponse(HttpStatusCode.InternalServerError, err);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
+        //    }
+
+        //}
+
+        //public HttpResponseMessage RemoveBook([FromBody]Book book)
+        //{
+        //    try
+        //    {
+        //        _bookService = new BookService();
+        //        if (_bookService.DeleteBook(book))
+        //        {
+        //            return Request.CreateResponse(HttpStatusCode.OK, book);
+        //        }
+        //        else
+        //        {
+        //            HttpError err = new HttpError(ApiMessage.RegisterFailed);
+        //            return Request.CreateResponse(HttpStatusCode.InternalServerError, err);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
+        //    }
+        //}
     }
 }

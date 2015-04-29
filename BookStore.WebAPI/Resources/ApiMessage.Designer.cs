@@ -70,6 +70,15 @@ namespace BookStore.WebAPI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Book not found..
+        /// </summary>
+        internal static string BookNotFound {
+            get {
+                return ResourceManager.GetString("BookNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your username or password was wrong..
         /// </summary>
         internal static string LoginFailed {
