@@ -1,0 +1,189 @@
+﻿// Define color
+$color1: #000000;
+$color2: #303F42;
+$color3: #55676A;
+$color4: #6C7A7D;
+$color5: #FFFFFF;
+$color6: #EEC015;
+
+$mainfont: Arial, Helvetica, sans-serif;
+$font-oswald: 'Oswald', sans-serif;
+
+$list-engine: -webkit, -moz, -ms, -o;
+
+body {
+    font: $mainfont;
+}
+
+header {
+    height: 200px;
+}
+
+#top-header {
+    background-color: $color1;
+    text-align: center;
+    color: $color2;
+}
+
+#top-header h5 {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#main-header {
+    margin: 20px 0;
+    text-align: center;
+    font-family: $font-oswald;
+}
+
+#logo-books {
+    font-size: 48px;
+    font-weight: bold;
+    @include animation(1s, 3s, 'color_change', infinite, normal);
+}
+
+#logo-sas {
+    letter-spacing: 3px;
+}
+
+//=============================//
+//==========KEY FRAME==========//
+//=============================//
+
+@-webkit-keyframes color_change {
+    0% {
+        color: $color1;
+    }
+
+    25% {
+        color: $color3;
+    }
+
+    50% {
+        color: $color5;
+    }
+
+    75% {
+        color: $color3;
+    }
+
+    100% {
+        color: $color1;
+    }
+}
+
+@-moz-keyframes color_change {
+    0% {
+        color: $color1;
+    }
+
+    25% {
+        color: $color3;
+    }
+
+    50% {
+        color: $color5;
+    }
+
+    75% {
+        color: $color3;
+    }
+
+    100% {
+        color: $color1;
+    }
+}
+
+@-o-keyframes color_change {
+    0% {
+        color: $color1;
+    }
+
+    25% {
+        color: $color3;
+    }
+
+    50% {
+        color: $color5;
+    }
+
+    75% {
+        color: $color3;
+    }
+
+    100% {
+        color: $color1;
+    }
+}
+
+@keyframes color_change {
+    0% {
+        color: $color1;
+    }
+
+    25% {
+        color: $color3;
+    }
+
+    50% {
+        color: $color5;
+    }
+
+    75% {
+        color: $color3;
+    }
+
+    100% {
+        color: $color1;
+    }
+}
+
+//=============================//
+//=======MIXIN ANIMATION=======//
+//=============================//
+
+@mixin animation ($delay, $duration, $animation, $iteration_count, $direction) {
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -moz-animation-name: $animation;
+    -o-animation-name: $animation;
+    animation-name: $animation;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: $iteration_count;
+    -moz-animation-iteration-count: $iteration_count;
+    -o-animation-iteration-count: $iteration_count;
+    animation-iteration-count: $iteration_count;
+    -webkit-animation-direction: $direction;
+    -moz-animation-direction: $direction;
+    -o-animation-direction: $direction;
+    animation-direction: $direction;
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+
+/*@mixin animation ($delay, $duration, $animation, $iteration_count, $direction) {
+    @each $engine in $list-engine {
+        #{$engine}-animation-delay: $delay;
+        #{$engine}-animation-duration: $duration;
+        #{$engine}-animation-name: $animation;
+        #{$engine}-animation-fill-mode: forwards;
+        #{$engine}-animation-iteration-count: $iteration_count;
+        #{$engine}-animation-direction: $direction;
+    }    
+}*/

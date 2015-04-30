@@ -1,0 +1,68 @@
+﻿<div ng-controller="sharebookController">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Book Name</h5><input type="text" class="form-control" name="book-name" ng-model="bookname" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Book Title</h5><input type="text" class="form-control" name="book-title" ng-model="booktitle" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Book Description</h5><input type="text" class="form-control" name="book-description" ng-model="bookdescription" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Publisher</h5><input type="text" class="form-control" name="publisher" ng-model="publisher" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Artist</h5><input type="text" class="form-control" name="artist" ng-model="artist" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Year</h5><input type="text" class="form-control" name="year" ng-model="year" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Pages</h5><input type="text" class="form-control" name="pages" ng-model="pages" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Language</h5><input type="text" class="form-control" name="language" ng-model="language" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Ebook Size</h5><input type="text" class="form-control" name="size" ng-model="size" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Ebook Format</h5><input type="text" class="form-control" name="format" ng-model="format" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Ebook Url</h5><input type="text" class="form-control" name="ebook-url" ng-model="ebookurl" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <h5>Image Url</h5><input type="text" class="form-control" name="image-url" ng-model="imageurl" />
+            </div>
+        </div>
+        <h5>Add Tags</h5><textarea class="form-control" rows="2" name="tags" placeholder="Input tags" ng-model="tags" />
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+            <input type="button" class="btn btn-primary" value="Share" onclick="submitBook()" />
+        </div>
+    </div>
+</div>
