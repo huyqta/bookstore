@@ -1,92 +1,36 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="BookStoreApp">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Book Store Sharing</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link rel="stylesheet" href="Content/bootstrap-theme.css" />
     <link rel="stylesheet" href="Content/font-awesome.min.css" />
+    <link rel="stylesheet" href="Content/ngDialog.min.css" />
     <link rel="stylesheet" href="Content/bstore.css" />
 </head>
-<body>
-    <header>
-        <div class="row text-left" id="top-header">
-            <div class="col-md-6 col-md-offset-4">
-                <h5><em>WELCOME TO BOOKSTORE SHARING! WE GET, WE SHARE AND WE HAVE EVERYTHING.</em></h5>
-            </div>
-            <div class="col-md-2">
-                <div id="addnew">
-                    &nbsp; SHARE &nbsp; <i class="fa fa-share-alt"></i>&nbsp;
-                </div>
-            </div>
-        </div>
-        <div id="main-header">
-            <div id="logo-books">BOOK</div><div class="change-color">S</div>
-            <div id="logo-sas"><u>STORE & SHARING</u></div>
-            <div class="searchbox">
-                <input type="text" id="searchtext" placeholder="Search entire store here..." />
-                <i class="fa fa-search"></i>
-            </div>
-        </div>
-    </header>
+<body ng-controller="homeController">
+    <bsheader></bsheader>
     <section>
         <div class="container">
-            <div class="book-group">
-                <div class="row">
-                    <h3 class="text-center book-group-title">Top Downloaded</h3>
-                </div>
-                <div class="row">
-                    <div class="group-book col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
-                        <ul>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="book-group">
-                <div class="row">
-                    <h3 class="text-center book-group-title">Lasted Uploaded</h3>
-                </div>
-                <div class="row">
-                    <div class="group-book col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
-                        <ul>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                            <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div ng-view></div>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="footer-group text-center col-md-3">
-                    <strong>About Us</strong>
-                </div>
-                <div class="footer-group text-center col-md-3">
-                    <strong>Contact</strong>
-                </div>
-                <div class="footer-group text-center col-md-3">
-                    <strong>Facebook</strong>
-                </div>
-                <div class="footer-group text-center col-md-3">
-                    <strong>Follow</strong>
-                </div>
-            </div>
-        </div>
-    </footer>
+
+    <bsfooter></bsfooter>
     <script type="text/javascript" src="Scripts/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="Scripts/angular.js"></script>
     <script type="text/javascript" src="Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="Scripts/angular.js"></script>
+    <script type="text/javascript" src="Scripts/ngDialog.min.js"></script>
+    <script type="text/javascript" src="Scripts/angular-route.min.js"></script>
+
+    <!-- Load angular JS -->
+    <script type="text/javascript" src="app/appMain.js"></script>
+    <script type="text/javascript" src="app/shared/layouts/layouts.js"></script>
+    <script type="text/javascript" src="app/components/home/homeController.js"></script>
+    <script type="text/javascript" src="app/components/home/homeService.js"></script>
+    <script type="text/javascript" src="app/components/sharebook/sharebookController.js"></script>
+    <script type="text/javascript" src="app/components/sharebook/sharebookService.js"></script>
 </body>
 </html>
