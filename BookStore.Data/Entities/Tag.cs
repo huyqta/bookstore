@@ -13,6 +13,6 @@ namespace BookStore.Data.Entities
 
         [Column("Tag")]
         [StringLength(50)]
-        public string Tag1 { get; set; }
+        public string TagName { get; set; }
     }
 }

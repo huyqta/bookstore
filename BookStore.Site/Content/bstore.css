@@ -191,4 +191,7 @@ footer {
   background-color: #6C7A7D;
   color: #FFFFFF; }
 
+label {
+  font-weight: normal !important; }
+
 /*# sourceMappingURL=bstore.css.map */

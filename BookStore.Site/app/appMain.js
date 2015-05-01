@@ -1,15 +1,7 @@
 ﻿var myApp = angular.module('BookStoreApp', ['ngDialog', 'ngRoute']);
 
-//myApp.config(['ngDialogProvider', function (ngDialogProvider) {
-//    ngDialogProvider.setDefaults({
-//        className: 'ngdialog-theme-default',
-//        plain: false,
-//        showClose: true,
-//        closeByDocument: true,
-//        closeByEscape: true,
-//        appendTo: false
-//    });
-//}]);
+var book_api = 'http://localhost/BookStore.WebAPI/api/books';
+var tag_api = 'http://localhost/BookStore.WebAPI/api/tags';
 
 myApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider.

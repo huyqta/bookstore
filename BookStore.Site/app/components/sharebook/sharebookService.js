@@ -1,21 +1,26 @@
 ﻿'use strict';
 
-var myApp = angular.module('BookStore');
-var book_api_create = 'http://localhost/BookStore.WebAPI/api/books/CreateBook';
-var book_api_get_by_id = 'http://localhost/BookStore.WebAPI/api/books/GetBookById';
-var book_api_get_all = 'http://localhost/BookStore.WebAPI/api/books';
-
 myApp.factory('sharebookService', function ($http) {
     return {
-        create: function (postdata) {
-            $http.post('book_api_create', postdata).then(function (data) {
-                console.log(data);
-                return data;
+        create: function (book) {
+            var transform = function (data) {
+                return $.param(data);
+            }
+            $http.post(book_api, book, {
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+                transformRequest: transform
+            }).then(function (data) {
+                $location.path("/sharebook");
             }, function (error) {
-                console.log(error);
-                return [];
+                $location.path("/sharebook");
             });
             return 
+        },
+        taglist: function () {
+            var taglist = $http.get(tag_api).then(function (data) {
+                return data;
+            });
+            return taglist;
         }
     }
 });

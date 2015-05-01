@@ -11,21 +11,20 @@ using System.Web.Mvc;
 
 namespace BookStore.WebAPI.Controllers
 {
-    public class BooksController : ApiController
+    public class TagsController : ApiController
     {
-        private IBookService _bookService;
+        private ITagService _tagService;
 
         // POST api/books
-        public HttpResponseMessage Post([FromBody]Book book)
+        public HttpResponseMessage Post([FromBody]Tag tag)
         {
             try
             {
-                _bookService = new BookService();
-                book.Id = Guid.NewGuid();
-                book.CREDate = DateTime.Now;
-                if (_bookService.CreateBook(book))
+                _tagService = new TagService();
+                tag.Id = Guid.NewGuid();
+                if (_tagService.CreateTag(tag))
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, book);
+                    return Request.CreateResponse(HttpStatusCode.OK, tag);
                 }
                 else
                 {
@@ -43,11 +42,11 @@ namespace BookStore.WebAPI.Controllers
         {
             try
             {
-                _bookService = new BookService();
-                var book = _bookService.GetBookById(Guid.Parse(id));
-                if (book != null)
+                _tagService = new TagService();
+                var tag = _tagService.GetTagById(Guid.Parse(id));
+                if (tag != null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, book);
+                    return Request.CreateResponse(HttpStatusCode.OK, tag);
                 }
                 else
                 {
@@ -65,11 +64,11 @@ namespace BookStore.WebAPI.Controllers
         {
             try
             {
-                _bookService = new BookService();
-                var books = _bookService.GetAllBook();
-                if (books != null)
+                _tagService = new TagService();
+                var tags = _tagService.GetAllTag();
+                if (tags != null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                    return Request.CreateResponse(HttpStatusCode.OK, tags);
                 }
                 else
                 {
