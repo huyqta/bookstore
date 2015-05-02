@@ -1,4 +1,4 @@
-﻿<header>
+﻿<header ng-controller="searchController">
     <div class="row text-left" id="top-header">
         <div class="col-md-6 col-md-offset-4">
             <h5><em>WELCOME TO BOOKSTORE SHARING! WE GET, WE SHARE AND WE HAVE EVERYTHING.</em></h5>
@@ -16,8 +16,9 @@
         <div id="logo-books">BOOK</div><div class="change-color">S</div>
         <div id="logo-sas"><u>STORE & SHARING</u></div>
         <div class="searchbox">
-            <input type="text" id="searchtext" placeholder="Search entire store here..." />
+            <input type="text" id="searchtext" placeholder="Search entire store here..." ng-model="search.value" ng-enter="searchBook()" />
             <i class="fa fa-search"></i>
         </div>
+        <h5>Search ebook by: &nbsp; <label><input type="radio" id="type" name="type" checked="checked" ng-model="rdtag" /> &nbsp; Tag &nbsp;</label><label> <input type="radio" id="type" name="type" ng-model="rdtag" /> &nbsp; Name </label></h5>
     </div>
 </header>

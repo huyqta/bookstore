@@ -119,5 +119,51 @@ namespace BookStore.WebAPI.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
             }
         }
+
+        [HttpGet]
+        public HttpResponseMessage SearchBookByTag(string value)
+        {
+            try
+            {
+                _bookService = new BookService();
+                var books = _bookService.SearchBookByTag(value);
+                if (books != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
+                else
+                {
+                    HttpError err = new HttpError(ApiMessage.BookNotFound);
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, err);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
+            }
+        }
+
+        [HttpGet]
+        public HttpResponseMessage SearchBookByName(string value)
+        {
+            try
+            {
+                _bookService = new BookService();
+                var books = _bookService.SearchBookByName(value);
+                if (books != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
+                else
+                {
+                    HttpError err = new HttpError(ApiMessage.BookNotFound);
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, err);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
+            }
+        }
     }
 }

@@ -14,5 +14,7 @@ namespace BookStore.Data.Services.Interface
         List<Book> GetAllBook();
 
         List<Book> GetLastestBook(int numberOfBook);
+        List<Book> SearchBookByTag(string tagName);
+        List<Book> SearchBookByName(string name);
     }
 }

@@ -1,9 +1,14 @@
 ﻿var myApp = angular.module('BookStoreApp', ['ngDialog', 'ngRoute']);
 
-var book_api = 'http://localhost/BookStore.WebAPI/api/books';
-var tag_api = 'http://localhost/BookStore.WebAPI/api/tags';
+// HOST
+var host = 'http://localhost/BookStore.WebAPI/';
+// restfulapi
+var book_api = host + 'api/books';
+var tag_api = host + 'api/tags';
 // Custom API
-var book_api_get_latest_book = 'http://localhost/BookStore.WebAPI/api/books/SelectLastestBook/6';
+var book_api_get_latest_book = host + 'api/books/SelectLastestBook/6';
+var book_api_search_by_tag = host + 'api/books/SearchBookByTag';
+var book_api_search_by_name = host + 'api/books/SearchBookByName';
 
 myApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider.
@@ -13,6 +18,8 @@ myApp.config(function ($routeProvider, $locationProvider) {
             { templateUrl: './app/components/home/home.html' }).
         when('/detail/:id',
             { templateUrl: './app/components/detail/detail.html' }).
+        when('/search/:value',
+            { templateUrl: './app/components/search/search.html' }).
         otherwise(
             { redirectTo: '/home' })
 })

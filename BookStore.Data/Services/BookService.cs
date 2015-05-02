@@ -64,5 +64,27 @@ namespace BookStore.Data.Services
                 return result;
             }
         }
+
+        public List<Book> SearchBookByTag(string tagName)
+        {
+            using (var context = new BookStoreContext())
+            {
+                var result = from tagbook in context.TagBooks
+                             join tag in context.Tags on tagbook.RefTag equals tag.Id
+                             join book in context.Books on tagbook.RefBook equals book.Id
+                             where tag.TagName == tagName
+                             select book;
+                return result.ToList();
+            }
+        }
+
+        public List<Book> SearchBookByName(string name)
+        {
+            using (var context = new BookStoreContext())
+            {
+                var result = context.Books.Where(b => b.BookName.Contains(name)).ToList();
+                return result.ToList();
+            }
+        }
     }
 }
