@@ -55,5 +55,14 @@ namespace BookStore.Data.Services
                 return context.Books.ToList();
             }
         }
+
+        public List<Book> GetLastestBook(int numberOfBook)
+        {
+            using (var context = new BookStoreContext())
+            {
+                var result = context.Books.OrderByDescending(b => b.CREDate).Take(numberOfBook).ToList();
+                return result;
+            }
+        }
     }
 }

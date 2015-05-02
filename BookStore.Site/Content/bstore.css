@@ -162,12 +162,16 @@ ul, li {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out; }
 
+.book-thumb > a > img {
+  box-shadow: 5px 5px 5px #6C7A7D;
+  max-height: 227px; }
+
 .book-thumb:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1); }
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05); }
 
 .book-group-title {
   margin: 25px 0; }

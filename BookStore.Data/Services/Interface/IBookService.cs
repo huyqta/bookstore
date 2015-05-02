@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BookStore.Data.Entities;
+using System.Linq;
 
 namespace BookStore.Data.Services.Interface
 {
@@ -11,5 +12,7 @@ namespace BookStore.Data.Services.Interface
         bool DeleteBook(Book book);
         Book GetBookById(Guid id);
         List<Book> GetAllBook();
+
+        List<Book> GetLastestBook(int numberOfBook);
     }
 }

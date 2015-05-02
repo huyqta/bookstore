@@ -4,7 +4,7 @@
             <h3 class="text-center book-group-title">Top Downloaded</h3>
         </div>
         <div class="row">
-            <div class="group-book col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+            <div class="group-book col-xs-12 center">
                 <ul>
                     <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
                     <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
@@ -22,14 +22,13 @@
             <h3 class="text-center book-group-title">Lasted Uploaded</h3>
         </div>
         <div class="row">
-            <div class="group-book col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+            <div class="group-book col-xs-12 center">
                 <ul>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
+                    <li class="book-thumb" ng-repeat="book in latestBook">
+                        <a href="index.html#/detail/{{book.Id}}">
+                            <img class="img-responsive center-block" src="{{book.ImageUrl}}" onerror="this.onerror = null; this.src = './assets/img/imagenotfound.png';" />
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
