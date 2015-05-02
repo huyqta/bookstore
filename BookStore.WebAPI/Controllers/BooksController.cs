@@ -28,15 +28,18 @@ namespace BookStore.WebAPI.Controllers
                 book = AutoMapper.Mapper.Map<BookModel, Book>(bookModel);
                 book.Id = Guid.NewGuid();
                 book.CREDate = DateTime.Now;
-                
-                foreach (string tag in bookModel.Tags.Split('|')){
-                    TagBook tagBook = new TagBook();
-                    tagBook.Id = Guid.NewGuid();
-                    tagBook.RefBook = book.Id;
-                    tagBook.RefTag = Guid.Parse(tag);
-                    _tagBookService.CreateTagBook(tagBook);
+
+                if (bookModel.Tags != null)
+                {
+                    foreach (string tag in bookModel.Tags.Split('|'))
+                    {
+                        TagBook tagBook = new TagBook();
+                        tagBook.Id = Guid.NewGuid();
+                        tagBook.RefBook = book.Id;
+                        tagBook.RefTag = Guid.Parse(tag);
+                        _tagBookService.CreateTagBook(tagBook);
+                    }
                 }
-                
                 if (_bookService.CreateBook(book))
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, book);

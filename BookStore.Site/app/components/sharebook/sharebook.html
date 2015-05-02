@@ -1,97 +1,80 @@
 ﻿<div ng-controller="sharebookController">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Book Name</h5><input type="text" class="form-control" name="book-name" ng-model="bookname" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Book Title</h5><input type="text" class="form-control" name="book-title" ng-model="booktitle" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Book Description</h5><input type="text" class="form-control" name="book-description" ng-model="bookdescription" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Publisher</h5><input type="text" class="form-control" name="publisher" ng-model="publisher" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Artist</h5><input type="text" class="form-control" name="artist" ng-model="artist" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Year</h5><input type="text" class="form-control" name="year" ng-model="year" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Pages</h5><input type="text" class="form-control" name="pages" ng-model="pages" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Language</h5><input type="text" class="form-control" name="language" ng-model="language" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Ebook Size</h5><input type="text" class="form-control" name="size" ng-model="size" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Ebook Format</h5><input type="text" class="form-control" name="format" ng-model="format" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Ebook Url</h5><input type="text" class="form-control" name="ebook-url" ng-model="ebookurl" />
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <h5>Image Url</h5><input type="text" class="form-control" name="image-url" ng-model="imageurl" />
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <div class="form-group">
-                <h5>Add Tags</h5>
-                <div class="col-xs-3" ng-repeat="tag in taglist">
-                    <label><input class="tagbooks" type="checkbox" value="{{ tag.Id }}" ng-model="checkbox.tag" ng-change="checkTag(checkbox.tag, '{{ tag.Id }}')"> &nbsp; {{tag.TagName}}</label>
+    <form name="form" ng-submit="sharebook()">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Book Name *</h5><input type="text" class="form-control" name="book-name" ng-model="bookname" required />
                 </div>
-                <input type="hidden" id="htags" name="tags" ng-model="tags" />
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Book Title</h5><input type="text" class="form-control" name="book-title" ng-model="booktitle" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Book Description *</h5><input type="text" class="form-control" name="book-description" ng-model="bookdescription" required />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Publisher</h5><input type="text" class="form-control" name="publisher" ng-model="publisher" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Artist</h5><input type="text" class="form-control" name="artist" ng-model="artist" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Year</h5><input type="number" class="form-control" name="year" ng-model="year" min="1970" max="9999" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Pages</h5><input type="number" class="form-control" name="pages" ng-model="pages" min="1" max="999999" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Language</h5><input type="text" class="form-control" name="language" ng-model="language" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Ebook Size</h5><input type="text" class="form-control" name="size" ng-model="size" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Ebook Format</h5><input type="text" class="form-control" name="format" ng-model="format" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Ebook Url *</h5><input type="text" class="form-control" name="ebook-url" ng-model="ebookurl" required />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <h5>Image Url *</h5><input type="text" class="form-control" name="image-url" ng-model="imageurl" required />
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <h5>Add Tags</h5>
+                    <div class="col-xs-3" ng-repeat="tag in taglist">
+                        <label><input class="tagbooks" type="checkbox" value="{{ tag.Id }}" ng-model="checkbox.tag" ng-change="checkTag(checkbox.tag, '{{ tag.Id }}')"> &nbsp; {{tag.TagName}}</label>
+                    </div>
+                    <input type="hidden" id="htags" name="tags" ng-model="tags" />
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <input type="submit" id="share-book" class="btn btn-primary" value="{{btnshare}}" ng-disabled="form.$invalid" />
             </div>
         </div>
-        <div class="clearfix"></div>
-        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-            <input type="button" id="share-book" class="btn btn-primary" value="Share" ng-click="sharebook()" />
-        </div>
-    </div>
+    </form>
 </div>
-<script>
-    $(document).ready(function () {
-        //var tagList = [];
-        //console.log('into sharebook script');
-        //$('.tagbooks').bind('change', function () {
-        //    console.log('into sharebook script changed');
-        //    var tag = $(this);
-        //    if (tag.is('checked')) {
-        //        tagList.push(tag.val());
-        //    }
-        //    else {
-        //        var indexItem = tagList.indexOf(tag.val());
-        //        tagList.splice(indexItem, 1);
-        //    }
-        //    htags.val(tagList.join('|'));
-        //    console.log(htags.val());
-        //});
-    });
-</script>

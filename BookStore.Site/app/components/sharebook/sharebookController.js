@@ -1,7 +1,8 @@
 ﻿'use strict';
 
-myApp.controller('sharebookController', ['$scope', 'sharebookService', function ($scope, sharebookService) {
-
+myApp.controller('sharebookController', ['$scope', '$location', 'sharebookService', function ($scope, $location, sharebookService) {
+    $scope.btnshare = "Share book!";
+    $scope.disablebtn = form.$invalid;
     $scope.tags = [];
 
     sharebookService.taglist().then(function (taglist) {
@@ -11,6 +12,8 @@ myApp.controller('sharebookController', ['$scope', 'sharebookService', function 
 
 
     $scope.sharebook = function () {
+        $scope.btnshare = "Sharing...";
+        $scope.disablebtn = true;
         var tagsString = $scope.tags.join('|');
         var postdata = {
             BookName: $scope.bookname,
@@ -27,7 +30,12 @@ myApp.controller('sharebookController', ['$scope', 'sharebookService', function 
             ImageUrl: $scope.imageurl,
             Tags: tagsString
         };
-        sharebookService.create(postdata);
+        sharebookService.create(postdata).then(function (data) {
+            if (data != []) {
+                var urlDetail = "/detail/" + data.data.Id;
+                $location.path(urlDetail);
+            }
+        });
     };
 
     $scope.checkTag = function (isChecked, tagId) {        

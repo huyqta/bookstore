@@ -1,13 +1,13 @@
 ﻿'use strict';
 
-myApp.controller('searchController', ['$scope', '$routeParams', '$location', 'searchService', function ($scope, routeParams, location, searchService) {
+myApp.controller('searchController', ['$scope', '$routeParams', '$location', 'searchService', function ($scope, $routeParams, $location, searchService) {
     $scope.stype = {
         type: "stag"
     };
 
     //$scope.books = function () {
-    var type = routeParams.type;
-    var value = routeParams.value;
+    var type = $routeParams.type;
+    var value = $routeParams.value;
     switch (type) {
         case 'stag':
             searchService.getBookByTag(value).then(function (book) {
@@ -25,6 +25,6 @@ myApp.controller('searchController', ['$scope', '$routeParams', '$location', 'se
 
     $scope.searchBook = function () {
         var urlSearch = "/search/" + $scope.stype.type + "/" + $scope.searchvalue;
-        location.path(urlSearch);
+        $location.path(urlSearch);
     };
 }]);

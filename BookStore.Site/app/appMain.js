@@ -23,3 +23,14 @@ myApp.config(function ($routeProvider, $locationProvider) {
         otherwise(
             { redirectTo: '/home' })
 })
+
+myApp.run(function ($rootScope, $http) {
+    $http.defaults.transformRequest.push(function (data) {
+        $rootScope.progress = true;
+        return data;
+    });
+    $http.defaults.transformResponse.push(function (data) {
+        $rootScope.progress = false;
+        return data;
+    })
+});

@@ -111,7 +111,6 @@ namespace BookStore.Data.Services
                         name.Substring(0, 1).ToLower() + "sharp"
                     };
                     var result = new List<Book>();
-                    //var result = context.Books.Where(b => arrayCond.Contains(b.BookName.Trim().ToLower())).ToList();
                     foreach (string cond in arrayCond)
                     {
                         var resultByCond = context.Books.Where(b => b.BookName.Trim().ToLower().Contains(cond.Trim().ToLower())).ToList();

@@ -13,6 +13,14 @@ myApp.directive('bsfooter', function () {
     };
 });
 
+myApp.directive('waiting', function () {
+    return {
+        restrict: 'E',
+        templateUrl: 'app/shared/layouts/waiting.html'
+    };
+});
+
+
 myApp.directive('ngEnter', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {

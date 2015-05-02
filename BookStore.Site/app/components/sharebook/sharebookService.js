@@ -6,16 +6,15 @@ myApp.factory('sharebookService', function ($http) {
             var transform = function (data) {
                 return $.param(data);
             }
-            $http.post(book_api, book, {
+            var book = $http.post(book_api, book, {
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
                 transformRequest: transform
             }).then(function (data) {
                 return data;
             }, function (error) {
                 return []
-                //$location.path("/sharebook");
             });
-            return 
+            return book;
         },
         taglist: function () {
             var taglist = $http.get(tag_api).then(function (data) {
