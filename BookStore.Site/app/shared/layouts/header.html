@@ -16,9 +16,13 @@
         <div id="logo-books">BOOK</div><div class="change-color">S</div>
         <div id="logo-sas"><u>STORE & SHARING</u></div>
         <div class="searchbox">
-            <input type="text" id="searchtext" placeholder="Search entire store here..." ng-model="search.value" ng-enter="searchBook()" />
+            <input type="text" id="searchtext" placeholder="Search entire store here..." ng-model="searchvalue" ng-enter="searchBook()" />
             <i class="fa fa-search"></i>
         </div>
-        <h5>Search ebook by: &nbsp; <label><input type="radio" id="type" name="type" checked="checked" ng-model="rdtag" /> &nbsp; Tag &nbsp;</label><label> <input type="radio" id="type" name="type" ng-model="rdtag" /> &nbsp; Name </label></h5>
+        <h5>
+            Search ebook by: &nbsp;
+            <label><input type="radio" id="type" name="type" checked="checked" ng-model="stype.type" value="stag" /> &nbsp; Tag &nbsp;</label>
+            <label><input type="radio" id="type" name="type" ng-model="stype.type" value="sname" /> &nbsp; Name </label>
+        </h5>
     </div>
 </header>

@@ -67,24 +67,72 @@ namespace BookStore.Data.Services
 
         public List<Book> SearchBookByTag(string tagName)
         {
-            using (var context = new BookStoreContext())
+            if (tagName.Trim().ToLower().IndexOf("sharp") > -1)
             {
-                var result = from tagbook in context.TagBooks
-                             join tag in context.Tags on tagbook.RefTag equals tag.Id
-                             join book in context.Books on tagbook.RefBook equals book.Id
-                             where tag.TagName == tagName
-                             select book;
-                return result.ToList();
+                using (var context = new BookStoreContext())
+                {
+                    var arrayCond = new List<string>(){
+                        tagName.Substring(0, 1).ToLower() + "#", 
+                        tagName.Substring(0, 1).ToLower() + " sharp", 
+                        tagName.Substring(0, 1).ToLower() + "sharp"
+                    };
+
+                    var result = from tagbook in context.TagBooks
+                                 join tag in context.Tags on tagbook.RefTag equals tag.Id
+                                 join book in context.Books on tagbook.RefBook equals book.Id
+                                 where arrayCond.Contains(tag.TagName.Trim().ToLower())
+                                 select book;
+                    return result.ToList();
+                }
+            }
+            else
+            {
+                using (var context = new BookStoreContext())
+                {
+                    var result = from tagbook in context.TagBooks
+                                 join tag in context.Tags on tagbook.RefTag equals tag.Id
+                                 join book in context.Books on tagbook.RefBook equals book.Id
+                                 where tag.TagName.Trim().ToLower() == tagName.Trim().ToLower()
+                                 select book;
+                    return result.ToList();
+                }
             }
         }
 
         public List<Book> SearchBookByName(string name)
         {
-            using (var context = new BookStoreContext())
+            if (name.Trim().ToLower().IndexOf("sharp") > -1)
             {
-                var result = context.Books.Where(b => b.BookName.Contains(name)).ToList();
-                return result.ToList();
+                using (var context = new BookStoreContext())
+                {
+                    var arrayCond = new List<string>(){
+                        name.Substring(0, 1).ToLower() + "#", 
+                        name.Substring(0, 1).ToLower() + " sharp", 
+                        name.Substring(0, 1).ToLower() + "sharp"
+                    };
+                    var result = new List<Book>();
+                    //var result = context.Books.Where(b => arrayCond.Contains(b.BookName.Trim().ToLower())).ToList();
+                    foreach (string cond in arrayCond)
+                    {
+                        var resultByCond = context.Books.Where(b => b.BookName.Trim().ToLower().Contains(cond.Trim().ToLower())).ToList();
+                        result.AddRange(resultByCond);
+                    }
+                    return result.ToList();
+                }
             }
+            else
+            {
+                using (var context = new BookStoreContext())
+                {
+                    var result = context.Books.Where(b => b.BookName.Trim().ToLower().Contains(name.Trim().ToLower())).ToList();
+                    return result.ToList();
+                }
+            }
+            //using (var context = new BookStoreContext())
+            //{
+            //    var result = context.Books.Where(b => b.BookName.Trim().ToLower().Contains(name.Trim().ToLower())).ToList();
+            //    return result.ToList();
+            //}
         }
     }
 }

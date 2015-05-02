@@ -10,9 +10,10 @@ myApp.factory('sharebookService', function ($http) {
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
                 transformRequest: transform
             }).then(function (data) {
-                $location.path("/sharebook");
+                return data;
             }, function (error) {
-                $location.path("/sharebook");
+                return []
+                //$location.path("/sharebook");
             });
             return 
         },

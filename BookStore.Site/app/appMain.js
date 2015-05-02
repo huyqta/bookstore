@@ -18,7 +18,7 @@ myApp.config(function ($routeProvider, $locationProvider) {
             { templateUrl: './app/components/home/home.html' }).
         when('/detail/:id',
             { templateUrl: './app/components/detail/detail.html' }).
-        when('/search/:value',
+        when('/search/:type/:value',
             { templateUrl: './app/components/search/search.html' }).
         otherwise(
             { redirectTo: '/home' })
