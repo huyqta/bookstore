@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using BookStore.Data.Entities;
 
 namespace BookStore.Data.Services.Interface

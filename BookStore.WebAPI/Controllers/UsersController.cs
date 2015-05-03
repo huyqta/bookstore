@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.Http;
-using BookStore.WebAPI.Commons;
 using BookStore.WebAPI.Resources;
 using System.Net.Http;
 using System.Net;
@@ -13,7 +12,7 @@ namespace BookStore.WebAPI.Controllers
     public class UsersController : ApiController
     {
         private IUserService _userService;
-        private ApiResult apiResult;
+
         public HttpResponseMessage Register([FromBody]User user)
         {
             try
@@ -56,13 +55,6 @@ namespace BookStore.WebAPI.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
             }
-            
         }
-
-        //public HttpResponseMessage ChangePassword(Guid id, string password, string newpassword)
-        //{
-        //    _userService = new UserService();
-
-        //}
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using BookStore.Data.Entities;
-using System.Linq;
 
 namespace BookStore.Data.Services.Interface
 {

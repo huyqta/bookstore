@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Web.Http;
-using BookStore.WebAPI.Commons;
 using BookStore.WebAPI.Resources;
 using System.Net.Http;
 using System.Net;
 using BookStore.Data.Services.Interface;
 using BookStore.Data.Services;
 using BookStore.Data.Entities;
-using System.Web.Mvc;
 
 namespace BookStore.WebAPI.Controllers
 {
@@ -15,7 +13,7 @@ namespace BookStore.WebAPI.Controllers
     {
         private ITagService _tagService;
 
-        // POST api/books
+        // POST api/tags
         public HttpResponseMessage Post([FromBody]Tag tag)
         {
             try

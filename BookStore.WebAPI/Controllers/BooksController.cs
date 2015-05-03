@@ -13,7 +13,6 @@ namespace BookStore.WebAPI.Controllers
     public class BooksController : ApiController
     {
         private IBookService _bookService;
-        private ITagService _tagService;
         private ITagBookService _tagBookService;
 
         // POST api/books
