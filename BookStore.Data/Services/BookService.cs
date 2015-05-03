@@ -127,11 +127,16 @@ namespace BookStore.Data.Services
                     return result.ToList();
                 }
             }
-            //using (var context = new BookStoreContext())
-            //{
-            //    var result = context.Books.Where(b => b.BookName.Trim().ToLower().Contains(name.Trim().ToLower())).ToList();
-            //    return result.ToList();
-            //}
+        }
+
+        public List<Book> SelectBookOfPage(int page)
+        {
+            using (var context = new BookStoreContext())
+            {
+                int bookPerPage = 5; // Default
+                var result = context.Books.OrderBy(b=>b.BookName).Skip(bookPerPage * (page)).Take(bookPerPage).ToList();
+                return result;
+            }
         }
     }
 }

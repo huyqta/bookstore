@@ -30,8 +30,8 @@ namespace BookStore.Data.Entities
         [StringLength(200)]
         public string Language { get; set; }
 
-        [Column(TypeName = "numeric")]
-        public decimal? EbookSize { get; set; }
+        [StringLength(200)]
+        public string EbookSize { get; set; }
 
         [StringLength(200)]
         public string EbookFormat { get; set; }

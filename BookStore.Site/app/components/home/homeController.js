@@ -1,7 +1,32 @@
 ﻿'use strict';
 
-myApp.controller('homeController', ['$scope', 'homeService', function ($scope, homeService) {
+myApp.controller('homeController', ['$scope', '$routeParams', 'homeService', function ($scope, routeParams, homeService) {
+
+    var value = routeParams.value;
+    if (value === undefined || value < 0) value = 0;
+    
+
+    $scope.pageprev = parseInt(value) - 1;
+    $scope.pagenext = parseInt(value) + 1;
+
     homeService.getLatestBook().then(function (latestBook) {
         $scope.latestBook = latestBook.data;
+    });
+
+    homeService.getBookByPage(value).then(function (books) {
+        $scope.bookByPage = books.data;
+        $scope.showPrev = function () {
+            if (value === undefined || value === '0')
+                return false;
+            else
+                return true;
+        }
+
+        $scope.showNext = function () {
+            if ($scope.bookByPage.length < 5)
+                return false;
+            else
+                return true;
+        }
     });
 }]);

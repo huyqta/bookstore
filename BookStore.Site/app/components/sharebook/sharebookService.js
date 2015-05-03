@@ -2,7 +2,7 @@
 
 myApp.factory('sharebookService', function ($http) {
     return {
-        create: function (book) {
+        createBook: function (book) {
             var transform = function (data) {
                 return $.param(data);
             }
@@ -16,7 +16,7 @@ myApp.factory('sharebookService', function ($http) {
             });
             return book;
         },
-        taglist: function () {
+        getTags: function () {
             var taglist = $http.get(tag_api).then(function (data) {
                 return data;
             });

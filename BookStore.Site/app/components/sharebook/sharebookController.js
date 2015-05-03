@@ -2,10 +2,9 @@
 
 myApp.controller('sharebookController', ['$scope', '$location', 'sharebookService', function ($scope, $location, sharebookService) {
     $scope.btnshare = "Share book!";
-    $scope.disablebtn = form.$invalid;
     $scope.tags = [];
 
-    sharebookService.taglist().then(function (taglist) {
+    sharebookService.getTags().then(function (taglist) {
         $scope.taglist = taglist.data;
     });
     
@@ -30,7 +29,7 @@ myApp.controller('sharebookController', ['$scope', '$location', 'sharebookServic
             ImageUrl: $scope.imageurl,
             Tags: tagsString
         };
-        sharebookService.create(postdata).then(function (data) {
+        sharebookService.createBook(postdata).then(function (data) {
             if (data != []) {
                 var urlDetail = "/detail/" + data.data.Id;
                 $location.path(urlDetail);

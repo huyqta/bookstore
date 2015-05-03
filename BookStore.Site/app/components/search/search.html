@@ -1,13 +1,17 @@
 ﻿<div ng-controller="searchController">
-    Search result:
+    <br />
+    <div class="row">
+        <h4>{{searchtext}}</h4>
+    </div>
+    <br />
     <div ng-repeat="book in books">
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-2">
                 <a href="index.html#/detail/{{book.Id}}">
                     <img class="img-responsive center-block" src="{{book.ImageUrl}}" onerror="this.onerror = null; this.src = './assets/img/imagenotfound.png';" />
                 </a>
             </div>
-            <div class="col-xs-8">
+            <div class="col-xs-10">
                 <div class="col-xs-12">
                     <a href="index.html#/detail/{{book.Id}}">
                         <h3>{{book.BookName}}</h3>

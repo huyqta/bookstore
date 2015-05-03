@@ -1,22 +1,28 @@
 ﻿<div ng-controller="homeController">
     <div class="book-group">
         <div class="row">
-            <h3 class="text-center book-group-title">Top Downloaded</h3>
+            <h3 class="text-center book-group-title">Our Books</h3>
         </div>
         <div class="row">
             <div class="group-book col-xs-12 center">
                 <ul>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
-                    <li class="book-thumb"><img class="img-responsive img-thumbnail" src="http://it-ebooks.info/images/ebooks/6/beginning_android_wearables.jpg" /></li>
+                    <li class="book-thumb" ng-repeat="book in bookByPage">
+                        <a href="index.html#/detail/{{book.Id}}">
+                            <img class="img-responsive center-block" src="{{book.ImageUrl}}" onerror="this.onerror = null; this.src = './assets/img/imagenotfound.png';" />
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-xs-12 text-center pagination">
+            <a ng-if="showPrev()" href="index.html#/home/{{pageprev}}">Prev</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a ng-if="showNext()" href="index.html#/home/{{pagenext}}">Next</a>
+        </div>
+    </div>
+    <hr />
     <div class="book-group">
         <div class="row">
             <h3 class="text-center book-group-title">Lasted Uploaded</h3>

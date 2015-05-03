@@ -101,6 +101,29 @@ namespace BookStore.WebAPI.Controllers
         }
 
         [HttpGet]
+        public HttpResponseMessage SelectBookOfPage(int value)
+        {
+            try
+            {
+                _bookService = new BookService();
+                var books = _bookService.SelectBookOfPage(value);
+                if (books != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
+                else
+                {
+                    HttpError err = new HttpError(ApiMessage.BookNotFound);
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, err);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
+            }
+        }
+
+        [HttpGet]
         public HttpResponseMessage SelectLastestBook(int value)
         {
             try

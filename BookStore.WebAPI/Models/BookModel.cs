@@ -23,7 +23,7 @@ namespace BookStore.WebAPI.Models
 
         public string Language { get; set; }
 
-        public decimal? EbookSize { get; set; }
+        public string EbookSize { get; set; }
 
         public string EbookFormat { get; set; }
 

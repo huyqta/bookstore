@@ -91,12 +91,16 @@ body {
 }
 
 header {
-    height: 200px;
+    height: 250px;
     background-color: $colorheader;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4 {
     font-family: $font-oswald;
+}
+
+span{
+    font-family: $mainfont;
 }
 
 ul, li {
@@ -151,6 +155,7 @@ ul, li {
 #main-header {
     text-align: center;
     font-family: $font-oswald;
+    padding: 20px 0;
 }
 
 #logo-books {
@@ -213,22 +218,22 @@ ul, li {
 }
 
 .book-thumb {
-    height: auto;
-    width: 16.6%;
+    min-height: 300px;
+    max-width: 20%;
     padding: 0 15px;
     cursor: pointer;
     -moz-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
     -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;    
+    transition: 0.3s ease-in-out;
 }
 
-.book-thumb > a > img{
-    box-shadow: 5px 5px 5px $color4;
-    max-height: 227px;
+.book-thumb > a > img {
+    //box-shadow: 5px 5px 5px $color4;
+    min-height: 300px;
 }
 
-.book-thumb:hover{
+.book-thumb:hover {
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
     -o-transform: scale(1.05);
@@ -242,14 +247,14 @@ ul, li {
 
 footer {
     margin-top: 30px;
-    padding: 30px 0;
+    //padding: 30px 0;
     background-color: $colorfooter;
     border-top: 1px $colorheader solid;
 }
 
 .footer-group {
-    border-left: 1px $colorheader solid;
-    border-right: 1px $colorheader solid;
+    /*border-left: 1px $color4 solid;
+    border-right: 1px $color4 solid;*/
     cursor: pointer;
     -moz-transition: 0.3s all;
     -o-transition: 0.3s all;
@@ -257,53 +262,26 @@ footer {
     transition: 0.3s all;
 }
 
-.footer-group:hover{
+.footer-group:hover {
     background-color: $color4;
     color: $color5;
 }
 
-label{
+label {
     font-weight: normal !important;
 }
 
-.glyphicon-refresh-animate {
-    -webkit-animation: spin2 .7s infinite linear;
-    -moz-animation: spin2 .7s infinite linear;
-    -o-animation: spin2 .7s infinite linear;
-    animation: spin2 .7s infinite linear;
+.book-name {
+    width: 198px;
+    height: 100px;
+    background-color: #000000;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
 }
 
-@-webkit-keyframes spin2 {
-    from {
-        -webkit-transform: rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        -o-transform: rotate(0);
-        transform: rotate(0);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes spin {
-    from { 
-        -moz-transform: scale(1) rotate(0);
-        -ms-transform: scale(1) rotate(0);
-        -o-transform: scale(1) rotate(0);
-        -webkit-transform: scale(1) rotate(0);
-        transform: scale(1) rotate(0);
-    }
-    to { 
-        -moz-transform: scale(1) rotate(360deg);
-        -ms-transform: scale(1) rotate(360deg);
-        -o-transform: scale(1) rotate(360deg);
-        -webkit-transform: scale(1) rotate(360deg);
-        transform: scale(1) rotate(360deg);
-
-    }
+.copyright{
+    background-color: $color4;
+    color: $color5;
 }
