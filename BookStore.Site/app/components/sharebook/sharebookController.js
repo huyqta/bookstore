@@ -47,7 +47,6 @@ myApp.controller('sharebookController', ['$scope', '$location', 'sharebookServic
                 $scope.tags.splice(indexTag, 1);
             }
         }
-        console.log($scope.tags);
     };
 }]);
 

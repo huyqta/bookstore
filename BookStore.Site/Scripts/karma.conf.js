@@ -24,6 +24,10 @@ module.exports = function (config) {
             '../app/components/home/homeService.js',
             '../app/components/sharebook/sharebookController.js',
             '../app/components/sharebook/sharebookService.js',
+            '../app/components/search/searchController.js',
+            '../app/components/search/searchService.js',
+            '../app/components/detail/detailController.js',
+            '../app/components/detail/detailService.js',
             '../test/*.js'
         ],
 
