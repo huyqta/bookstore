@@ -99,7 +99,7 @@ h1, h2, h3, h4 {
     font-family: $font-oswald;
 }
 
-span{
+span {
     font-family: $mainfont;
 }
 
@@ -125,24 +125,36 @@ ul, li {
 }
 
 
-#addnew {
+.header-button {
     display: inline-block;
-    padding-top: 3px;
     float: right;
     font-family: $font-oswald;
-    height: 28px;
-    border-radius: 4px;
-    border: solid transparent 1px;
+    height: 33px;
     cursor: pointer;
-    margin-top: 3px;
+    padding: 0 15px;
     -moz-transition: 0.3s all;
     -o-transition: 0.3s all;
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
 }
 
-#addnew:hover {
-    background-color: $color4;
+.header-button > a {
+    color: $color5;
+    text-decoration: none;
+    line-height: 33px;
+    vertical-align: middle;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+}
+
+.header-button > a:hover {
+    color: $color6;
+}
+
+.header-button:hover {
+    background-color: $color2;
 }
 
 #top-header h5 {
@@ -260,6 +272,12 @@ footer {
     -o-transition: 0.3s all;
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
+    height: 70px;
+}
+
+.footer-group > h5{
+    line-height: 50px;
+    vertical-align: middle;
 }
 
 .footer-group:hover {
@@ -281,7 +299,13 @@ label {
     z-index: 999;
 }
 
-.copyright{
+.copyright {
     background-color: $color4;
     color: $color5;
+    height: 50px;
+}
+
+.copyright > h5{
+    line-height: 30px;
+    vertical-align: middle;
 }

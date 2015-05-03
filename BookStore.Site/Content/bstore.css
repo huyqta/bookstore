@@ -63,23 +63,33 @@ ul, li {
   display: inline-block;
   z-index: 999; }
 
-#addnew {
+.header-button {
   display: inline-block;
-  padding-top: 3px;
   float: right;
   font-family: 'Oswald', sans-serif;
-  height: 28px;
-  border-radius: 4px;
-  border: solid transparent 1px;
+  height: 33px;
   cursor: pointer;
-  margin-top: 3px;
+  padding: 0 15px;
   -moz-transition: 0.3s all;
   -o-transition: 0.3s all;
   -webkit-transition: 0.3s all;
   transition: 0.3s all; }
 
-#addnew:hover {
-  background-color: #6C7A7D; }
+.header-button > a {
+  color: #FFFFFF;
+  text-decoration: none;
+  line-height: 33px;
+  vertical-align: middle;
+  -moz-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all; }
+
+.header-button > a:hover {
+  color: #EEC015; }
+
+.header-button:hover {
+  background-color: #303F42; }
 
 #top-header h5 {
   font-weight: bold;
@@ -191,7 +201,12 @@ footer {
   -moz-transition: 0.3s all;
   -o-transition: 0.3s all;
   -webkit-transition: 0.3s all;
-  transition: 0.3s all; }
+  transition: 0.3s all;
+  height: 70px; }
+
+.footer-group > h5 {
+  line-height: 50px;
+  vertical-align: middle; }
 
 .footer-group:hover {
   background-color: #6C7A7D;
@@ -211,6 +226,11 @@ label {
 
 .copyright {
   background-color: #6C7A7D;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  height: 50px; }
+
+.copyright > h5 {
+  line-height: 30px;
+  vertical-align: middle; }
 
 /*# sourceMappingURL=bstore.css.map */
