@@ -87,7 +87,7 @@ $animation-name
 
 
 body {
-    font-family: $font-oswald;
+    font-family: $mainfont;
 }
 
 header {
@@ -95,7 +95,11 @@ header {
     background-color: $colorheader;
 }
 
-h1, h2, h3, h4 {
+section{
+    min-height: 860px;
+}
+
+h1, h2, h3, h4, h5 {
     font-family: $font-oswald;
 }
 
