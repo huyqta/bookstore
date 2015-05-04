@@ -13,7 +13,8 @@ myApp.factory('homeService', function ($http) {
         },
 
         getLatestBook: function () {
-            var latestBook = $http.get(book_api_get_latest_book).then(function (data) {
+            var numofLatestBook = 5; // Set default is 5
+            var latestBook = $http.get(book_api_get_latest_book + "/" + numofLatestBook).then(function (data) {
                 return data;
             }, function (error) {
                 return [];

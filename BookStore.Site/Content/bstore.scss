@@ -95,8 +95,8 @@ header {
     background-color: $colorheader;
 }
 
-section{
-    min-height: 860px;
+section {
+    min-height: 500px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -247,6 +247,7 @@ ul, li {
 .book-thumb > a > img {
     //box-shadow: 5px 5px 5px $color4;
     min-height: 300px;
+    box-shadow: 0 5px 5px $color3;
 }
 
 .book-thumb:hover {
@@ -279,7 +280,7 @@ footer {
     height: 70px;
 }
 
-.footer-group > h5{
+.footer-group > h5 {
     line-height: 50px;
     vertical-align: middle;
 }
@@ -309,7 +310,34 @@ label {
     height: 50px;
 }
 
-.copyright > h5{
+.copyright > h5 {
     line-height: 30px;
     vertical-align: middle;
+}
+
+.angle-btn {
+    position: absolute;
+    cursor: pointer;
+    font-size: 100px;
+}
+
+.angle-btn {
+    position: absolute;
+    cursor: pointer;
+    font-size: 100px;
+    transition: 0.2s all;
+}
+
+.angle-btn:hover{
+    color: $color3;
+}
+
+.left-angle-btn {
+    left: -40px;
+    top: 100px;
+}
+
+.right-angle-btn {
+    right: -40px;
+    top: 100px;
 }

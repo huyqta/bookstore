@@ -40,7 +40,7 @@ header {
   background-color: #DFDFDF; }
 
 section {
-  min-height: 860px; }
+  min-height: 500px; }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Oswald', sans-serif; }
@@ -180,7 +180,8 @@ ul, li {
   transition: 0.3s ease-in-out; }
 
 .book-thumb > a > img {
-  min-height: 300px; }
+  min-height: 300px;
+  box-shadow: 0 5px 5px #55676A; }
 
 .book-thumb:hover {
   -webkit-transform: scale(1.05);
@@ -235,5 +236,27 @@ label {
 .copyright > h5 {
   line-height: 30px;
   vertical-align: middle; }
+
+.angle-btn {
+  position: absolute;
+  cursor: pointer;
+  font-size: 100px; }
+
+.angle-btn {
+  position: absolute;
+  cursor: pointer;
+  font-size: 100px;
+  transition: 0.2s all; }
+
+.angle-btn:hover {
+  color: #55676A; }
+
+.left-angle-btn {
+  left: -40px;
+  top: 100px; }
+
+.right-angle-btn {
+  right: -40px;
+  top: 100px; }
 
 /*# sourceMappingURL=bstore.css.map */

@@ -6,7 +6,7 @@ var host = 'http://localhost/BookStore.WebAPI/';
 var book_api = host + 'api/books';
 var tag_api = host + 'api/tags';
 // Custom API
-var book_api_get_latest_book = host + 'api/books/SelectLastestBook/5';
+var book_api_get_latest_book = host + 'api/books/SelectLastestBook';
 var book_api_search_by_tag = host + 'api/books/SearchBookByTag';
 var book_api_search_by_name = host + 'api/books/SearchBookByName';
 var book_api_select_by_page = host + 'api/books/SelectBookOfPage';

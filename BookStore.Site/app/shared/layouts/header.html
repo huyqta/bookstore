@@ -21,8 +21,8 @@
         </div>
         <h5>
             Search ebook by: &nbsp;
-            <label><input type="radio" id="type" name="type" checked="checked" ng-model="stype.type" value="stag" /> &nbsp; Tag &nbsp;</label>
-            <label><input type="radio" id="type" name="type" ng-model="stype.type" value="sname" /> &nbsp; Name </label>
+            <label><input type="radio" id="type" name="type" checked="checked" ng-model="stype.type" value="stag" ng-enter="searchBook()" /> &nbsp; Tag &nbsp;</label>
+            <label><input type="radio" id="type" name="type" ng-model="stype.type" value="sname" ng-enter="searchBook()" /> &nbsp; Name </label>
         </h5>
     </div>
 </header>
